@@ -1,5 +1,12 @@
-HX711
+
+
+HX711-Multi Channel
 =====
+
+Independent calibrating and tare suport for channel A and B
+
+-------------------
+Fork from https://github.com/bogde/HX711
 
 An Arduino library to interface the Avia Semiconductor HX711 24-Bit Analog-to-Digital Converter (ADC) for Weight Scales.
 

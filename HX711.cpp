@@ -5,7 +5,7 @@
     // "yield" is not implemented as noop in older Arduino Core releases, so let's define it.
     // See also: https://stackoverflow.com/questions/34497758/what-is-the-secret-of-the-arduino-yieldfunction/34498165#34498165
     void yield(void) {};
-#endif
+#endif 
 
 HX711::HX711(byte dout, byte pd_sck, byte gain) {
 	begin(dout, pd_sck, gain);
@@ -96,11 +96,11 @@ long HX711::read_average(byte times) {
 }
 
 double HX711::get_value(byte times) {
-	return read_average(times) - OFFSET;
+	return read_average(times) - OFFSET[GAIN-1];
 }
 
 float HX711::get_units(byte times) {
-	return get_value(times) / SCALE;
+	return get_value(times) / SCALE[GAIN-1];
 }
 
 void HX711::tare(byte times) {
@@ -109,19 +109,19 @@ void HX711::tare(byte times) {
 }
 
 void HX711::set_scale(float scale) {
-	SCALE = scale;
+	SCALE[GAIN-1] = scale;
 }
 
 float HX711::get_scale() {
-	return SCALE;
+	return SCALE[GAIN-1];
 }
 
 void HX711::set_offset(long offset) {
-	OFFSET = offset;
+	OFFSET[GAIN-1] = offset;
 }
 
 long HX711::get_offset() {
-	return OFFSET;
+	return OFFSET[GAIN-1];
 }
 
 void HX711::power_down() {
