@@ -1,9 +1,11 @@
 
 
-HX711-Multi Channel
+HX711-Multi channel tare - ESP32 e ESP8266
 =====
 
 Independent calibrating and tare suport for channel A and B
+
+On ESP8266 Clk pin must be GPIO14
 
 -------------------
 Fork from https://github.com/bogde/HX711
