@@ -7,6 +7,12 @@
 #include "WProgram.h"
 #endif
 
+enum HX711_CH{
+	CH_Ax128 = 128,
+	CH_Ax64 = 64,
+	CH_Bx32 = 32
+};
+
 class HX711
 {
 	private:
